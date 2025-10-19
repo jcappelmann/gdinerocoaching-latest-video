@@ -1,18 +1,3 @@
-<script>
-  // JCFetch latest video ID from raw GitHub URL (updated by Zapier)
-  fetch('https://raw.githubusercontent.com/jcappelmann/gdinerocoaching-latest-video/main/latest-video-id.txt')
-    .then(response => response.text())
-    .then(videoId => {
-      const trimmedId = videoId.trim(); // Remove any whitespace
-      if (trimmedId && trimmedId.length === 11) { // Ensure valid ID length
-        document.getElementById('video-player').innerHTML = 
-          `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${trimmedId}" 
-                   frameborder="0" allowfullscreen></iframe>`;
-      } else {
-        document.getElementById('video-player').innerHTML = 'Invalid video ID: ' + trimmedId;
-      }
-    })
-    .catch(error => {
-      document.getElementById('video-player').innerHTML = 'Error fetching video ID: ' + error;
-    });
-</script>
+<div id="video-player">
+  <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+</div>
